@@ -1,9 +1,14 @@
-import express from 'express'
-import { signUp } from '../controller/userController'
+import express from "express";
+import { fetchUserData, login, logout, signUp } from "../controller/userController";
 
+const router = express.Router();
 
-const router = express.Router()
+router.route("/sign-up").post(signUp);
 
-router.route('/sign-up').post(signUp)
+router.route("/fetch-user-data").get(fetchUserData);
 
-export default router
+router.route('/log-in').post(login)
+
+router.route('/log-out').get(logout)
+
+export default router;
