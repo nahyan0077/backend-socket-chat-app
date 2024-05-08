@@ -77,9 +77,8 @@ export const chatController = (io: Server) => {
 			});
 
 			socket.on("typing",(data: any) => {
-				console.log(data,"typing");
 				const user = onlineUsersList.find((user)=>user.userId == data.receiverId)
-				console.log(user,"online or not");
+				
 				if(user){
 					io.to(user.socketId).emit("typing",data)
 				}
