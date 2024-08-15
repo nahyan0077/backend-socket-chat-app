@@ -26,7 +26,7 @@ app.use(cookieparser())
 app.use(
 	cors({
 		credentials: true,
-		origin: ["http://localhost:5173"]
+		origin: ["http://localhost:3000","https://flip-chat.vercel.app/"]
 	})
 );
 
@@ -39,7 +39,7 @@ app.use('/message',messageRouter)
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: ["http://localhost:5173"],
+        origin: ["http://localhost:3000","https://flip-chat.vercel.app"],
 		methods: ["GET", "POST"]
     },
   });

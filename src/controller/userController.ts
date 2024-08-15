@@ -41,6 +41,8 @@ export const signUp = async (req: Request, res: Response): Promise<void> => {
 			res.cookie("token", token, {
 				httpOnly: true,
 				maxAge: 1000 * 60 * 60 * 24,
+				sameSite: "none",
+				secure: true,
 			});
 
 			res
@@ -121,6 +123,8 @@ export const login = async (req: Request, res: Response) => {
 			.cookie("token", token, {
 				httpOnly: true,
 				maxAge: 1000 * 60 * 60 * 24,
+				sameSite: "none",
+				secure: true,
 			})
 			.status(200)
 			.json({ success: true, message: "Login successful",userExist });
