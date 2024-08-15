@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon /src/index.ts",
     "start": "nodemon dist/index.js",
-    "build": "tsc --watch",
+    "build": "tsc",
     "start:dev": " concurrently --kill-others-on-fail \"npm run build\" \"npm run start\""
   },
   "keywords": [],
