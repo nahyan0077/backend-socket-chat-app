@@ -26,7 +26,7 @@ app.use(cookieparser())
 app.use(
 	cors({
 		credentials: true,
-		origin: ["http://localhost:3000","https://flip-chat.vercel.app/"]
+		origin: ["http://localhost:3000","https://flip-chat.vercel.app"]
 	})
 );
 
